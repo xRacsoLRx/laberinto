@@ -302,8 +302,8 @@ class Bicho(Ente):
     def actua(self):
         self.mode.actua(self)
     
-    def caminaAleatorio(self):
-        self.position.caminaAleatorio(self)
+    def caminarAleatorio(self):
+        self.position.caminarAleatorio(self)
     
     def start(self):
         self.actua()
@@ -324,14 +324,14 @@ class Mode:
     def esPerezoso(self):
         return False
     
-    def act(self, bicho):
+    def actua(self, bicho):
         while bicho.life > 0:
             self.duerme(bicho)
             self.camina(bicho)
             self.ataca(bicho)
 
     def camina(self, bicho):
-        bicho.caminaAleatorio()
+        bicho.caminarAleatorio()
 
     def duerme(self, bicho):
         print(bicho," está durmiendo")
